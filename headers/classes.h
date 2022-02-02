@@ -2,17 +2,6 @@
 #define CLASSES
 #include <SDL2/SDL.h>
 #include "structs.h"
-class App {
-	public:
-		SDL_Window *window;
-		SDL_Renderer *renderer;
-};
-
-class Entity {
-	public:
-		int x, y, width, heigth;
-		SDL_Texture *texture;
-};
 
 class Rect{
 	public:

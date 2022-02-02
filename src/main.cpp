@@ -1,7 +1,5 @@
 #include "../headers/main.h"
 
-App app;
-
 void cleanup();
 
 int main(){
@@ -10,7 +8,16 @@ int main(){
 	Draw draw;
 	Input input;
 	Ui ui(app, draw);
-	
+	Entity player(10, 2, 5);
+	Entity enemy(8, 1, 2);
+
+	SDL_Texture *t = loadTexture(app, "assets/pc.png");
+	if(!t){
+		std::cout << "Error!\n";
+		std::cout << SDL_GetError();
+	}
+	draw.createTexture(t, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, 100, 100);
+
 	draw.createRect(640, 450, 1000, 250);
 //	draw.createText("aaaa", 100, 100);
 //	draw.createText("bbbb", 10, 10);
@@ -20,6 +27,7 @@ int main(){
 		draw.preparateScene(app);
 		draw.drawRects(app);
 		draw.drawTexts(app);
+		draw.drawTextures(app);
 		draw.presentScene(app);
 	}
 	std::cout << "Done!\n";

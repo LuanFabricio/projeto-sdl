@@ -3,7 +3,7 @@
 void init(App &app){
 	int renderFlags, windowFlags;
 	renderFlags = SDL_RENDERER_ACCELERATED;
-	windowFlags = 0;
+	windowFlags = 0;//SDL_WINDOW_MAXIMIZED;
 
 	if(SDL_Init(SDL_INIT_VIDEO) < 0){
 		std::cout << "Não consegui inicializar o vídeo\n";

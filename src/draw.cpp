@@ -83,3 +83,29 @@ void Draw::createText(char* text, int x, int y, int sizeX, int sizeY, int fontSi
 int Draw::getTextsSize(){
 	return texts.size();
 }
+
+void Draw::createTexture(SDL_Texture *texture, int x, int y, int width, int height){
+	Texture newTexture = { texture, x, y, width, height, true };
+	textures.push_back(newTexture);
+}
+
+void Draw::drawTextures(App &app){
+	for(int i = 0 ; i < textures.size() ; i++){
+		if(textures[i].visible){
+			blit(app, textures[i]);
+		}
+	}
+}
+
+void Draw::updateTextureVisibility(int index, bool newVisible){
+	if(index < textures.size()){
+		textures[index].visible = newVisible;
+	}
+}
+
+void Draw::updateTextureCoords(int index, int x, int y){
+	if(index < textures.size()){
+		textures[index].x = x;
+		textures[index].y = y;
+	}
+}
