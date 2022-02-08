@@ -109,3 +109,10 @@ void Draw::updateTextureCoords(int index, int x, int y){
 		textures[index].y = y;
 	}
 }
+
+char* Draw::getTextContent(int index){
+	if(texts.size() > index && index > -1){
+		return texts[index].text;
+	}
+	return NULL;
+}

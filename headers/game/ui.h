@@ -11,7 +11,7 @@ class Ui {
 		void nextButton();
 		void pastButton();
 		void selectButton(int indexUI, Draw &draw, Color selectColor);
-		Button getSelectedButton(Button &btn);
+		void getSelectedButton(Button &btn);
 };
 
 #endif

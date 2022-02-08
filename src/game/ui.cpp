@@ -55,6 +55,6 @@ void Ui::selectButton(int indexUI, Draw &draw, Color selectColor){
 	draw.setRectColor(indexDraw, selectColor);
 }
 
-Button Ui::getSelectedButton(Button &btn){
+void Ui::getSelectedButton(Button &btn){
 	btn = buttons[currentButton];
 }

@@ -8,15 +8,22 @@ int main(){
 	Draw draw;
 	Input input;
 	Ui ui(app, draw);
-	Entity player(10, 2, 5);
-	Entity enemy(8, 1, 2);
+	std::vector<Entity> entities;
+	Entity player("player", 10, 2, 5);
+	Entity enemy("enemy", 8, 1, 2);
+	entities.push_back(player);
 
 	SDL_Texture *t = loadTexture(app, "assets/pc.png");
 	if(!t){
 		std::cout << "Error!\n";
 		std::cout << SDL_GetError();
 	}
-	draw.createTexture(t, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, 100, 100);
+	const int ENEMY_X = SCREEN_WIDTH/2;
+        const int ENEMY_Y = SCREEN_HEIGHT/2;
+	draw.createTexture(t, ENEMY_X, ENEMY_Y, 100, 100);
+	enemy.x = ENEMY_X;
+	enemy.y = ENEMY_Y;
+	enemy.index = draw.getTextsSize()-1;
 
 	draw.createRect(640, 450, 1000, 250);
 //	draw.createText("aaaa", 100, 100);

@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <vector>
+#include <cstring>
 #include <string>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
