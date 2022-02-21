@@ -10,17 +10,19 @@ class Rect{
 		bool visible = true;
 };
 
-class Button{
-	public:
-		int rectIndex, textIndex;
-		Color color;
-};
-
 class Text {
 	public:
 		int index, x, y, sizeX, sizeY, offX, offY, fontSize;
 		SDL_Color color;
 		char* text;
 		bool visible = true;
+};
+
+class Button{
+	public:
+		Rect *textBox;
+		Text *text;
+		int rectIndex, textIndex;
+		Color color;
 };
 #endif

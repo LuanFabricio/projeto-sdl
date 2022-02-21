@@ -12,10 +12,11 @@ Entity::~Entity(){
 	delete[] name;
 }
 
-void Entity::move(int newX, int newY, Draw &draw){
-	_x = newX;
-	_y = newY;
-	draw.updateTextureCoords(index, newX, newY);
+void Entity::move(int newX, int newY){
+	x = newX;
+	y = newY;
+	text->x = newX;
+	text->y = newY;
 }
 
 void Entity::takeDamage(int damage){

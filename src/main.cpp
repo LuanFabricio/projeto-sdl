@@ -20,10 +20,11 @@ int main(){
 	}
 	const int ENEMY_X = SCREEN_WIDTH/2;
         const int ENEMY_Y = SCREEN_HEIGHT/2;
-	draw.createTexture(t, ENEMY_X, ENEMY_Y, 100, 100);
+	enemy.text = draw.createTexture(t, ENEMY_X, ENEMY_Y, 100, 100);
 	enemy.x = ENEMY_X;
 	enemy.y = ENEMY_Y;
-	enemy.index = draw.getTextsSize()-1;
+
+	enemy.move(100, 100);
 
 	draw.createRect(640, 450, 1000, 250);
 //	draw.createText("aaaa", 100, 100);
