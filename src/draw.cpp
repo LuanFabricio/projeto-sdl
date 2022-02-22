@@ -89,14 +89,20 @@ int Draw::getTextsSize(){
 }
 
 Texture* Draw::createTexture(SDL_Texture *texture, int x, int y, int width, int height){
-	Texture newTexture = { texture, x, y, width, height, true };
+	Texture *newTexture = (Texture*)malloc(sizeof(Texture));
+	newTexture->texture = texture;
+	newTexture->x = x;
+	newTexture->y = y;
+	newTexture->w = width;
+	newTexture->h = height;
+	newTexture->visible = true;
 	textures.push_back(newTexture);
-	return &textures[textures.size()-1];
+	return newTexture;
 }
 
 void Draw::drawTextures(App &app){
 	for(int i = 0 ; i < textures.size() ; i++){
-		if(textures[i].visible){
+		if(textures[i]->visible){
 			blit(app, textures[i]);
 		}
 	}
@@ -104,14 +110,14 @@ void Draw::drawTextures(App &app){
 
 void Draw::updateTextureVisibility(int index, bool newVisible){
 	if(index < textures.size()){
-		textures[index].visible = newVisible;
+		textures[index]->visible = newVisible;
 	}
 }
 
 void Draw::updateTextureCoords(int index, int x, int y){
 	if(index < textures.size()){
-		textures[index].x = x;
-		textures[index].y = y;
+		textures[index]->x = x;
+		textures[index]->y = y;
 	}
 }
 

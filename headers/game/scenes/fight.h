@@ -6,10 +6,10 @@
 
 class Fight{
 	public:
-		Fight(int enemies);
-
+		Fight(int qEnemies);
+		void loadTextures(App app, char* path, Draw &draw);
 	private:
-		std::vector<entity> enemies;
-}
+		std::vector<Entity*> enemies;
+};
 
 #endif

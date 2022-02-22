@@ -13,7 +13,7 @@ int main(){
 	Entity enemy("enemy", 8, 1, 2);
 	entities.push_back(player);
 
-	SDL_Texture *t = loadTexture(app, "assets/pc.png");
+	SDL_Texture *t = loadTexture(app, "assets/zerg.jpeg");
 	if(!t){
 		std::cout << "Error!\n";
 		std::cout << SDL_GetError();
@@ -23,6 +23,9 @@ int main(){
 	enemy.text = draw.createTexture(t, ENEMY_X, ENEMY_Y, 100, 100);
 	enemy.x = ENEMY_X;
 	enemy.y = ENEMY_Y;
+
+	Fight f(2);
+	f.loadTextures(app, "assets/zerg.jpeg", draw);
 
 	enemy.move(100, 100);
 

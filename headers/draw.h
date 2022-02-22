@@ -26,6 +26,6 @@ class Draw{
 	private:
 		std::vector<Rect*> rects;
 		std::vector<Text*> texts;
-		std::vector<Texture> textures;
+		std::vector<Texture*> textures;
 };
 #endif
